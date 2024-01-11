@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useFormInputs } from '../hooks/useFormInputs'
 import { randomChars } from '../helpers/randomChars'
 import { Copy } from './Copy'
+import { BtnRotate } from './BtnRotate'
 
 export const FormInputs = () => {
   const [rangeBar, setRangeBar] = useState(0)
@@ -34,7 +35,8 @@ export const FormInputs = () => {
     <div className="container-inputs">
         <div className="content">
           <input type="text" disabled className='input-disabled' value={password} />
-          <Copy password={password}/>
+          <Copy password={password} />
+          <BtnRotate setPassword={setPassword} boxChars={boxChars} rangeBar={rangeBar}/>
         </div>
         <div className="content">
           <input type="range" name="range" id="range" value={rangeBar} onInput={(e) => handleActiveRange(e)} min={0} max={100} />
@@ -43,8 +45,8 @@ export const FormInputs = () => {
       </div>
     <form className='container-form'>
         <div className="container-form-labels">
-          <label htmlFor="mayusculas">Mayusculas</label>
-          <label htmlFor="minusculas">Minusculas</label>
+          <label htmlFor="mayusculas">Mayúsculas</label>
+          <label htmlFor="minusculas">Minúsculas</label>
           <label htmlFor="caracteres">Caracteres</label>
           <label htmlFor="numeros">Números</label>
         </div>

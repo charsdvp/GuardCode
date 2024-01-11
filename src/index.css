@@ -17,11 +17,19 @@ body {
   background-color: #8f2ab0;
 }
 .container {
-  position: relative;
   height: 100vh;
   width: 100%;
   padding: 35px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container-description{
+  margin: 0 auto;
+  margin-top: 25px;
+  max-width: 60ch;
+  line-height: 28px;
 }
 .container-form {
   text-align: left;
@@ -77,6 +85,7 @@ input[type='checkbox']:checked {
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 10px;
   justify-content: space-between;
 }
 /* Estilo base del rango */
@@ -98,30 +107,41 @@ input[type='checkbox']:checked {
   border: 2px solid #fff;
   border-radius: 100px;
 }
-.icon{
+.icon-copy, .icon-rotate{
   cursor: pointer;
   transition: scale .3s ease;
 }
-.icon:active{
+.icon-copy:active, .icon-rotate:active{
   scale: 1.5;
   color: #6c35de;
 }
 .footer{
+  /* border-top: 1px solid #6c35de; */
   margin: 0 auto;
   width: 80%;
   display: flex;
   justify-content: space-between;
   padding: 35px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
 }
-.link-item{
+.footer-list{
+  display: flex;
+  gap: 25px;
+}
+.footer-list-item{
+  list-style: none;
+}
+.list-item-link{
   text-decoration: none;
   color: #fff;
   transition: color .3s ease;
 }
-.link-item:hover{
+.list-item-link:hover{
   color: #6c35de;
+}
+@media screen and (max-width: 540px){
+  .footer{
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 25px;
+  }
 }
